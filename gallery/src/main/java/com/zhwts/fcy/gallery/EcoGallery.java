@@ -485,10 +485,10 @@ public class EcoGallery extends EcoGalleryAbsSpinner implements GestureDetector.
      * is the gallery's center).
      */
     private void scrollIntoSlots() {
-        Log.e("TAG", "2222---" + getChildCount() + "---" + mSelectedChild);
+        //Log.e("TAG", "2222---" + getChildCount() + "---" + mSelectedChild);
         if (getChildCount() == 0 || mSelectedChild == null)
             return;
-        Log.e("TAG", "2222" + mSelectedChild);
+       // Log.e("TAG", "2222" + mSelectedChild);
         int selectedCenter = getCenterOfView(mSelectedChild);
         int targetCenter = getCenterOfGallery();
 
@@ -522,7 +522,7 @@ public class EcoGallery extends EcoGalleryAbsSpinner implements GestureDetector.
      * selected child.
      */
     public void setSelectionToCenterChild() {
-        Log.e("TAG", "利用mSelectedChild");
+      //  Log.e("TAG", "利用mSelectedChild");
         View selView = mSelectedChild;
         if (mSelectedChild == null)
             return;
@@ -555,7 +555,7 @@ public class EcoGallery extends EcoGalleryAbsSpinner implements GestureDetector.
 
         int newPos = mFirstPosition + newSelectedChildIndex;
         if (newPos != mSelectedPosition) {
-            Log.e("TAG","setSelectedPositionInt----"+newPos);
+          //  Log.e("TAG","setSelectedPositionInt----"+newPos);
             setSelectedPositionInt(newPos);
             setNextSelectedPositionInt(newPos);
             checkSelectionChanged();
@@ -590,7 +590,7 @@ public class EcoGallery extends EcoGalleryAbsSpinner implements GestureDetector.
 
         // Update to the new selected position.
         if (mNextSelectedPosition >= 0) {
-            Log.e("TAG","-----setSelectedPositionInt----"+mNextSelectedPosition);
+           //Log.e("TAG","-----setSelectedPositionInt----"+mNextSelectedPosition);
             setSelectedPositionInt(mNextSelectedPosition);
         }
 
@@ -930,7 +930,7 @@ public class EcoGallery extends EcoGalleryAbsSpinner implements GestureDetector.
     public void onUp() {
 
         if (mFlingRunnable.mScroller.isFinished()) {
-            Log.e("TAG", "111111");
+           // Log.e("TAG", "111111");
             scrollIntoSlots();
         }
 
@@ -939,7 +939,7 @@ public class EcoGallery extends EcoGalleryAbsSpinner implements GestureDetector.
 
     public void myonUp() {
 
-        Log.e("TAG", "myonUp");
+        //Log.e("TAG", "myonUp");
         scrollIntoSlots();
 
 
@@ -989,7 +989,7 @@ public class EcoGallery extends EcoGalleryAbsSpinner implements GestureDetector.
     private void dispatchUnpress() {
 
         for (int i = getChildCount() - 1; i >= 0; i--) {
-            Log.e("TAG", "dddd");
+            //Log.e("TAG", "dddd");
             getChildAt(i).setPressed(false);
         }
 
@@ -1162,9 +1162,9 @@ public class EcoGallery extends EcoGalleryAbsSpinner implements GestureDetector.
 
     @Override
     public void setSelectedPositionInt(int position) {
-        Log.e("TAG", position + "传入的position");
+       // Log.e("TAG", position + "传入的position");
         super.setSelectedPositionInt(position);
-        Log.e("TAG", mSelectedPosition + "设置mSelectedPosition");
+       // Log.e("TAG", mSelectedPosition + "设置mSelectedPosition");
         // Updates any metadata we keep about the selected item.
         updateSelectedItemMetadata();
     }
@@ -1173,11 +1173,11 @@ public class EcoGallery extends EcoGalleryAbsSpinner implements GestureDetector.
 
         View oldSelectedChild = mSelectedChild;
         View child = mSelectedChild = getChildAt(mSelectedPosition - mFirstPosition);
-        Log.e("TAG", "为mSelectedChild赋值" + mSelectedChild + "---" + mFirstPosition + "---" + mSelectedPosition);
+       // Log.e("TAG", "为mSelectedChild赋值" + mSelectedChild + "---" + mFirstPosition + "---" + mSelectedPosition);
         if (child == null) {
             return;
         }
-        Log.e("TAG", "child不为空");
+       // Log.e("TAG", "child不为空");
         child.setSelected(true);
         child.setFocusable(true);
 
