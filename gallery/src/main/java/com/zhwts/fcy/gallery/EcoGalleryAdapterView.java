@@ -1047,7 +1047,7 @@ public abstract class EcoGalleryAdapterView<T extends Adapter> extends ViewGroup
      * @param position Our current position
      */
     void setSelectedPositionInt(int position) {
-        Log.e("TAG", position + "2层传入的position");
+        //Log.e("TAG", position + "2层传入的position");
         mSelectedPosition = position;
         mSelectedRowId = getItemIdAtPosition(position);
     }
