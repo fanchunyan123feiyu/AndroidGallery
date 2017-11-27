@@ -479,7 +479,10 @@ public class EcoGallery extends EcoGalleryAbsSpinner implements GestureDetector.
             mFirstPosition += count;
         }
     }
-
+    int selectedCenter1;
+    public  int  getCurrentPosition(){
+    return selectedCenter1;
+    }
     /**
      * Scrolls the items so that the selected item is in its 'slot' (its center
      * is the gallery's center).
@@ -490,6 +493,8 @@ public class EcoGallery extends EcoGalleryAbsSpinner implements GestureDetector.
             return;
        // Log.e("TAG", "2222" + mSelectedChild);
         int selectedCenter = getCenterOfView(mSelectedChild);
+        selectedCenter1=selectedCenter;
+         Log.e("TAG", "选中的position" + selectedCenter);
         int targetCenter = getCenterOfGallery();
 
         int scrollAmount = targetCenter - selectedCenter;

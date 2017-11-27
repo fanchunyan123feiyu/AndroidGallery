@@ -50,10 +50,16 @@ public class DiscoverActivity extends AppCompatActivity{
         setContentView(R.layout.activity_discover);
         wgallery=(WGallery)findViewById(R.id.gallery);
 
-        DiscoverResult discoverResult=new Gson().fromJson(data, DiscoverResult.class);
+        final DiscoverResult discoverResult=new Gson().fromJson(data, DiscoverResult.class);
         Log.e("TAG",discoverResult.toString());
         wgallery.setAdapter(new DiscoverAdapter(discoverResult.getData().getGuider()));
-
+/*        wgallery
+wgallery.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        Log.e("TAG",discoverResult.getData().getGuider().get(getC).getId());
+    }
+});*/
         center();
     }
 
